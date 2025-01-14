@@ -1,4 +1,21 @@
 <x-app-layout>
+    @if (session('success'))
+        <div id="alert"
+            class="fixed top-0 right-0 bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md"
+            role="alert">
+            <div class="flex">
+                <p class="font-bold">{{ session('success') }}</p>
+            </div>
+        </div>
+
+        <script>
+            setTimeout(function() {
+                document.getElementById("alert").style.display = "none";
+            }, 3000);
+        </script>
+    @endif
+
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             List Sparepart
